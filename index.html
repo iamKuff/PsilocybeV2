@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychedelic Mushroom Blog 2000</title>
+    <style>
+        @keyframes rainbow {
+            0% { color: red; } 14% { color: orange; } 28% { color: yellow; }
+            42% { color: green; } 57% { color: blue; } 71% { color: indigo; }
+            85% { color: violet; } 100% { color: red; }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes psychedelic {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+        @keyframes wobble {
+            0%, 100% { transform: translateX(0) rotate(0); }
+            25% { transform: translateX(-5px) rotate(-5deg); }
+            75% { transform: translateX(5px) rotate(5deg); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive;
+            background-color: #000000;
+            color: #ffffff;
+            image-rendering: pixelated;
+            overflow-x: hidden;
+        }
+        .masthead {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .masthead::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle, transparent 20%, #000 80%, #000 100%),
+                linear-gradient(to right, #ff00ff, #00ffff);
+            mix-blend-mode: overlay;
+            opacity: 0.7;
+            animation: psychedelic 10s linear infinite;
+        }
+        .masthead h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+            padding: 10px;
+            position: relative;
+            text-shadow: 
+                2px 2px 0 #ff00ff,
+                -2px -2px 0 #00ffff,
+                2px -2px 0 #ffff00,
+                -2px 2px 0 #00ff00;
+            animation: wobble 3s ease-in-out infinite;
+        }
+        .masthead .subheader {
+            font-size: 24px;
+            margin-top: 10px;
+            animation: blink 1s linear infinite;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .blog-post {
+            margin-bottom: 40px;
+            border: 2px groove #00ff00;
+            padding: 20px;
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+        .blog-post h2 {
+            color: #ffff00;
+            text-shadow: 2px 2px #ff00ff;
+        }
+        .blog-post img {
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ff00ff;
+            animation: spin 10s linear infinite;
+        }
+        .trippy-text {
+            font-size: 18px;
+            letter-spacing: 2px;
+            animation: rainbow 3s linear infinite;
+        }
+        .psychedelic-bg {
+            background-image: url('/api/placeholder/800/600');
+            background-size: cover;
+            animation: psychedelic 10s linear infinite;
+        }
+        .crt-effect {
+            position: relative;
+        }
+        .crt-effect::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(to bottom, 
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 2;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="crt-effect psychedelic-bg">
+    <div class="masthead">
+        <h1>Psychedelic Mushroom Blog 2000</h1>
+        <div class="subheader">Your groovy guide to the fungal realm</div>
+    </div>
+    
+    <div class="content">
+        <div class="blog-post">
+            <h2>The Magical World of Mushrooms</h2>
+            <img src="/api/placeholder/400/300" alt="Trippy mushroom" width="400" height="300">
+            <p class="trippy-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam viverra nunc in justo bibendum, vel tincidunt nisi malesuada. Sed euismod, nunc vel bibendum lacinia, nunc nunc tincidunt nunc, nec tincidunt nunc nunc nec nunc.
+            </p>
+        </div>
+        
+        <div class="blog-post">
+            <h2>Foraging Adventures in Wonderland</h2>
+            <img src="/api/placeholder/400/300" alt="Psychedelic forest" width="400" height="300">
+            <p class="trippy-text">
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Nulla porttitor accumsan tincidunt. Curabitur aliquet quam id dui posuere blandit.
+            </p>
+        </div>
+        
+        <div class="blog-post">
+            <h2>The Cosmic Connection of Fungi</h2>
+            <img src="/api/placeholder/400/300" alt="Space mushrooms" width="400" height="300">
+            <p class="trippy-text">
+                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
