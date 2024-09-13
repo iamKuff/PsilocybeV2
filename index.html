@@ -10,10 +10,6 @@
             42% { color: green; } 57% { color: blue; } 71% { color: indigo; }
             85% { color: violet; } 100% { color: red; }
         }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
         @keyframes psychedelic {
             0% { filter: hue-rotate(0deg); }
             100% { filter: hue-rotate(360deg); }
@@ -91,8 +87,7 @@
         .blog-post img {
             max-width: 100%;
             height: auto;
-            border: 5px solid #ff00ff;
-            animation: spin 10s linear infinite;
+            animation: psychedelic 10s linear infinite;
         }
         .trippy-text {
             font-size: 18px;
